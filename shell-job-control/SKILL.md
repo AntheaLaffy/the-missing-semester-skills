@@ -13,11 +13,11 @@ description: >
 
 ## 操作契约
 
-- **打断**：Ctrl-C 发 SIGINT（可被程序忽略）；Ctrl-\ 发 SIGQUIT（更强硬）；`kill -TERM PID` 是通用的「请优雅退出」。
+- **打断**：Ctrl-C 发 SIGINT（可被程序忽略）；Ctrl-\ 发 SIGQUIT（更强硬）；`kill -TERM PID` 是通用的「请优雅退出」。`kill` 本质是发任意信号，不只杀进程——`kill -CONT PID` 发继续信号，把挂起的进程恢复运行（bg 的底层动作）。
 - **挂起与前后台**：Ctrl-Z 发 SIGTSTP 挂起前台任务；`jobs` 列出会话里的作业（用 `%1` 引用作业号）；`fg %1` 拉回前台、`bg %1` 转后台继续；`cmd &` 直接后台启动，`$!` 是它的 PID。
 - **后台任务依赖终端**：关终端会发 SIGHUP 把子进程一起带走；`nohup cmd &` 忽略 SIGHUP；已启动的用 `disown` 摘除。要真正持久，用终端复用器（见 `tmux`）。
 - **SIGKILL 是最后手段**：不可捕获、立即终止，可能留下孤儿进程；先 SIGTERM，不行再 SIGKILL。
-- **trap 做清理**：`trap cleanup EXIT` 退出时收尾（删临时文件、释放资源）；`trap cleanup SIGINT SIGTERM` 覆盖 Ctrl-C 和 kill。
+- **trap 做清理**：`trap cleanup EXIT` 退出时收尾（删临时文件、释放资源）；`trap cleanup SIGINT SIGTERM` 覆盖 Ctrl-C 和 kill。不处理中断的程序可能留下半写的文件——清理逻辑要用 trap 兜底，而不是只依赖正常路径。
 - **等待进程**：`wait` 等当前 shell 的子进程结束；跨 shell 用 `kill -0 PID` 探测存活（不发信号，进程不存在时返回非 0），配 sleep 轮询避免空转。
 - **找 PID**：`pgrep -af <模式>` 先查再杀，`pkill` 按名终止——避免手输 PID 抄错。
 
