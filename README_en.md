@@ -4,7 +4,7 @@
 
 > Being a good software engineer isn't just about writing code that works — it's about writing code that others (including future you) can understand, maintain, and build upon.
 
-This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/); Lecture 2, [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/); Lecture 3, [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/); Lecture 4, [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/); Lecture 5, [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/); and Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/).
+This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/); Lecture 2, [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/); Lecture 3, [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/); Lecture 4, [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/); Lecture 5, [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/); Lecture 6, [*Packaging and Shipping Code*](https://missing.csail.mit.edu/2026/shipping-code/); and Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/).
 
 ## Lecture 1 · Course overview + the shell
 
@@ -39,6 +39,12 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 - **`git-data-model`** — blobs/trees/commits, the commit DAG, content addressing, references and HEAD, the staging area; every command is an operation on the model. *User-invoked*
 - **`git-cli`** — Command map: daily use / branching & merging / remotes / undo / advanced / gitignore & config; commit messages and PRs point to `writing-for-readers` and `contributing-upstream`. *Model-invoked* ("commit / merge / resolve a conflict / push / undo in git")
 
+## Lecture 6 · Packaging and Shipping Code
+
+- **`python-packaging`** — pip/uv, venvs, dependency hell, pyproject.toml, wheels/sdists, lock files, publishing to PyPI/TestPyPI. *Model-invoked* ("create a venv / write pyproject.toml / build or publish / dependency conflicts")
+- **`versioning-reproducibility`** — SemVer/CalVer, version specifiers, library-vs-application pinning strategy, hermetic builds, upgrades and rollback. *User-invoked*
+- **`containers-deployment`** — Dockerfile best practices and image layers, Compose, systemd, when Kubernetes is worth it, configuration and secrets, deployment. *Model-invoked* ("write a Dockerfile / compose / containerize / deploy")
+
 ## Lecture 8 · Beyond the Code
 
 ### One-way communication
@@ -65,7 +71,7 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 
 ## Installation
 
-Copy this directory into Claude Code's skills folder (or `git clone` this repo to `~/.claude/skills/`). The twelve *model-invoked* skills load automatically when relevant; the seven *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
+Copy this directory into Claude Code's skills folder (or `git clone` this repo to `~/.claude/skills/`). The fourteen *model-invoked* skills load automatically when relevant; the eight *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
 
 ## Source & attribution
 
@@ -76,5 +82,6 @@ Adapted from the lecture notes and transcripts of *The Missing Semester of Your 
 - Lecture 3, Development Environment: <https://missing.csail.mit.edu/2026/development-environment/> · video: <https://www.youtube.com/watch?v=QnM1nVzrkx8>
 - Lecture 4, Debugging and Profiling: <https://missing.csail.mit.edu/2026/debugging-profiling/> · video: <https://www.youtube.com/watch?v=8VYT9TcUmKs>
 - Lecture 5, Version Control and Git: <https://missing.csail.mit.edu/2026/version-control/> · video: <https://www.youtube.com/watch?v=9K8lB61dl3Y>
+- Lecture 6, Packaging and Shipping Code: <https://missing.csail.mit.edu/2026/shipping-code/> · video: <https://www.youtube.com/watch?v=KBMiB-8P4Ns>
 - Lecture 8, Beyond the Code: <https://missing.csail.mit.edu/2026/beyond-code/> · video: <https://www.youtube.com/watch?v=2DOEATfXT8k>
 - Course materials are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); these skills follow the same license.
