@@ -4,7 +4,7 @@
 
 > Being a good software engineer isn't just about writing code that works — it's about writing code that others (including future you) can understand, maintain, and build upon.
 
-This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/); Lecture 2, [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/); Lecture 3, [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/); and Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/).
+This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/); Lecture 2, [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/); Lecture 3, [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/); Lecture 4, [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/); and Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/).
 
 ## Lecture 1 · Course overview + the shell
 
@@ -26,6 +26,13 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 
 - **`vim-editing`** — The Vim interface language: modal editing, nouns (movement) / verbs (editing), counts and modifiers; Vim mode everywhere (VSCodeVim / Zsh / Claude Code). *User-invoked*
 - **`dev-environment`** — IDE vs terminal workflow tradeoffs, language servers and LSP, the three forms of AI-driven development, extensions / remote / collaboration; notes DeepSeek Harness (dsh) for users in mainland China. *Model-invoked* ("set up my IDE / language server / AI autocomplete / extension")
+
+## Lecture 4 · Debugging and Profiling
+
+- **`debugging`** — The debugging tool ladder: print/logging, gdb, rr reverse debugging, strace/bpftrace, network capture, sanitizers/Valgrind, AI assistance. *Model-invoked* ("debug a crash / segfault / memory error")
+- **`profiling`** — Performance analysis: the three `time` values, resource monitoring, tidy data and plotting, perf/flame graphs/callgrind, massif, hyperfine. *Model-invoked* ("analyze performance / find bottlenecks / benchmark")
+
+> These two skills cover only the science side of the MIT lecture (principles and concrete tools); for the version mixed with engineering strategy (the art side), see dsh's built-in `debugging-and-profiling` and `diagnosing-bugs`.
 
 ## Lecture 8 · Beyond the Code
 
@@ -53,7 +60,7 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 
 ## Installation
 
-Copy this directory into Claude Code's skills folder (or `git clone` this repo to `~/.claude/skills/`). The nine *model-invoked* skills load automatically when relevant; the six *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
+Copy this directory into Claude Code's skills folder (or `git clone` this repo to `~/.claude/skills/`). The eleven *model-invoked* skills load automatically when relevant; the six *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
 
 ## Source & attribution
 
@@ -62,5 +69,6 @@ Adapted from the lecture notes and transcripts of *The Missing Semester of Your 
 - Lecture 1, Course overview + the shell: <https://missing.csail.mit.edu/2026/course-shell/> · video: <https://www.youtube.com/watch?v=MSgoeuMqUmU>
 - Lecture 2, Command-line Environment: <https://missing.csail.mit.edu/2026/command-line-environment/> · video: <https://www.youtube.com/watch?v=ccBGsPedE9Q>
 - Lecture 3, Development Environment: <https://missing.csail.mit.edu/2026/development-environment/> · video: <https://www.youtube.com/watch?v=QnM1nVzrkx8>
+- Lecture 4, Debugging and Profiling: <https://missing.csail.mit.edu/2026/debugging-profiling/> · video: <https://www.youtube.com/watch?v=8VYT9TcUmKs>
 - Lecture 8, Beyond the Code: <https://missing.csail.mit.edu/2026/beyond-code/> · video: <https://www.youtube.com/watch?v=2DOEATfXT8k>
 - Course materials are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); these skills follow the same license.
