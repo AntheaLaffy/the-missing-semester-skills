@@ -13,26 +13,28 @@ description: >
 
 ## 日常
 
-- `git init` 建仓库（数据在 .git）；`git status` 看现状；`git add <file>` 加进暂存区；`git commit` 造新提交——写好的提交信息（见 `writing-for-readers`）。
-- `git log` 扁平历史；`git log --all --graph --decorate` 把历史画成 DAG。
-- `git diff <file>` 相对暂存区的改动；`git diff <revision> <file>` 两个快照间的差异。
-- `git checkout <revision>` 更新 HEAD（检出分支时连当前分支一起动）。
+- `git init` 建仓库（数据在 .git）；`git status` 看现状；`git add <file>` 加进暂存区；`git commit` 造新提交——写好的提交信息（见 `writing-for-readers`）。`-m` 命令行直接给信息，`-a` 提交所有已跟踪文件的改动。
+- `git log` 扁平历史（不带 `--all` 只显示当前分支可达的历史）；`git log --all --graph --decorate` 把全部历史画成 DAG；`git log -p` 带每个提交的内联 diff。
+- `git diff <file>` 相对暂存区的改动；`git diff <revision> <file>` 两个快照间的差异（`HEAD~` 表示 HEAD 的父提交）。
+- `git checkout <revision>` / `git switch` 更新 HEAD 并把工作目录改成该快照的内容（检出分支时连当前分支一起动）。
 
 ## 分支与合并
 
 - `git branch` 看/建分支；`git switch <name>` 切换；`git checkout -b <name>` 建并切换（= branch + switch）。
-- `git merge <revision>` 合入当前分支；`git mergetool` 用图形/终端工具解冲突。
+- `git merge <revision>` 合入当前分支；`git mergetool` 用图形/终端工具解冲突。合并启发式：改不同文件、或同文件相距较远的块 → 自动合并；改到同一处 → 冲突，文件里出现 `<<<<<<<` / `=======` / `>>>>>>>` 标记——编辑保留想要的内容、删标记，再 `git add` + `git commit`（或 `git merge --continue`）。
 - `git rebase` 把一组补丁搬到新基底。
 
 ## 远程
 
 - `git remote` / `git remote add <name> <url>`。
-- `git push <remote> <本地>:<远程>`：发送对象并更新远程引用；`git branch --set-upstream-to=<remote>/<remote branch>` 建立跟踪关系。
-- `git fetch` 只拉对象和引用（不合并）；`git pull` = fetch + merge；`git clone` 下载整个仓库。
+- `git push <remote> <本地>:<远程>`：发送到该提交为止的完整历史并更新远程引用；`git branch --set-upstream-to=<remote>/<remote branch>` 建立跟踪关系（之后裸 `git push` 即可）。
+- `git fetch` 拉对象并更新 `origin/main` 等远程跟踪引用，不动你的本地分支；`git pull` = fetch + 更新本地分支（能快进就快进，否则合并）；`git clone` 下载整个仓库。
 
 ## 撤销
 
 - `git commit --amend` 改最近提交的内容/信息；`git reset <file>` 取消暂存；`git restore` 丢弃改动。
+- 敏感信息误提交：已推送 → 立即去服务方作废该密钥（历史里留着也不致命），别指望删历史；未推送 → 用 rebase 改写历史。
+- detached HEAD 下误提交：记下打印出的哈希，`git branch <name> <hash>` 找回。
 - 出了岔子查 [Oh Shit, Git!?!](https://ohshitgit.com/) 救火清单。
 
 ## 进阶
@@ -49,7 +51,7 @@ description: >
 - GUI 客户端很多，讲师们不用，用命令行。
 - Shell 提示符里显示 git 状态很实用（zsh/bash，Oh My Zsh 等框架常带）；Vim 集成用 fugitive.vim。
 - GitHub ≠ Git：PR 是 GitHub 特有的协作方式；还有 GitLab、BitBucket 等托管。
-- 大项目协作实践（workflows）讲座未展开，见 Pro Git 后续章节。
+- 常见分支惯例：main 放最新稳定代码，feature/bugfix 分支开发后合并回 main；网站类再加 staging 分支（先并 staging 测试，再并 main）。更复杂 workflow 见 Pro Git 后续章节。
 
 ## 资源
 
