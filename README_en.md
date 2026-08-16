@@ -78,7 +78,26 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 
 ## Installation
 
-Copy this directory into Claude Code's skills folder (or `git clone` this repo to `~/.claude/skills/`). The sixteen *model-invoked* skills load automatically when relevant; the eight *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
+One-click install (symlinks; agents pick up repo updates automatically):
+
+```bash
+# Recommended: download, inspect, then run
+curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-skills/main/install.sh -o install.sh
+less install.sh
+bash install.sh            # interactively choose claude / agents / opencode / all
+
+# Or one step (dsh users)
+curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-skills/main/install.sh | bash -s -- agents --yes
+```
+
+- Primary target: `~/.claude/skills` (Claude Code), `~/.agents/skills` (dsh / DeepSeek Harness), or `~/.config/opencode/skills` (OpenCode)
+- For other agents: if their skills folder exists you can optionally install there too; if it doesn't, you can optionally create it as a symlink to the primary target
+- OpenCode natively reads `.claude/skills` and `.agents/skills`, so installing to either covers it; Codex CLI has no file-based skills folder (use `~/.codex/AGENTS.md` or MCP)
+- Uninstall: `bash install.sh --uninstall`
+
+The old way also works: copy this directory into a skills folder, or `git clone` this repo to `~/.claude/skills/`.
+
+The sixteen *model-invoked* skills load automatically when relevant; the eight *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
 
 ## Source & attribution
 

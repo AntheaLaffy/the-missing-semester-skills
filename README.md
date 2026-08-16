@@ -78,7 +78,26 @@
 
 ## 安装
 
-把本目录复制到 Claude Code 的 skills 文件夹（或 `git clone` 本仓库到 `~/.claude/skills/`）即可：十六个标注「自动触发」的 skill 由模型按需加载，八个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
+一键安装（软链接方式，仓库更新后各 agent 立即可用）：
+
+```bash
+# 推荐：先下载、看一眼，再执行
+curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-skills/main/install.sh -o install.sh
+less install.sh
+bash install.sh            # 交互选择 claude / agents / opencode / all
+
+# 或者一步到位（dsh 用户）
+curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-skills/main/install.sh | bash -s -- agents --yes
+```
+
+- 主目标可选：`~/.claude/skills`（Claude Code）、`~/.agents/skills`（dsh / DeepSeek Harness）、`~/.config/opencode/skills`（OpenCode）
+- 其他 agent 的 skills 目录已存在 → 可选同步安装；不存在 → 可选建成指向主目标的软链接
+- opencode 原生读取 `.claude/skills` 与 `.agents/skills`，装给前两者即自动覆盖；Codex CLI 没有文件式 skills 目录（请用 `~/.codex/AGENTS.md` 或 MCP）
+- 卸载：`bash install.sh --uninstall`
+
+老办法同样可行：把本目录复制进 skills 文件夹，或 `git clone` 本仓库到 `~/.claude/skills/`。
+
+十六个标注「自动触发」的 skill 由模型按需加载，八个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
 
 ## 来源与署名
 
