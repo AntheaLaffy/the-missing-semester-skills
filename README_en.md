@@ -83,6 +83,12 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 - **`ci-cd`** — Pre-commit hooks, GitHub Actions (push / PR / schedule, matrices, check-only mode, badges), continuous deployment, just / npm scripts command runners. *Model-invoked* ("set up pre-commit / CI/CD / just")
 - **`regex`** — Syntax cheatsheet, capture groups and references, the greediness trap, limitations. *User-invoked*
 
+## Course tutor
+
+- **`learn-missing-semester`** — A progressive learning loop built on the 28 skills as minimal units across 9 lectures: motivation → minimal knowledge → verifiable practice → retrieval quiz → record, with spaced review and a mistake pool; progress lives in `.missing-semester/` in the current directory. *User-invoked*
+
+> Start learning with one command: tell dsh "**use learn-missing-semester to start learning**"; afterwards say "continue learning", "learn lecture N", or "review".
+
 ## Installation
 
 One-click install (symlinks; agents pick up repo updates automatically):
@@ -104,7 +110,7 @@ curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-sk
 
 The old way also works: copy this directory into a skills folder, or `git clone` this repo to `~/.claude/skills/`.
 
-The nineteen *model-invoked* skills load automatically when relevant; the nine *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
+The nineteen *model-invoked* skills load automatically when relevant; the ten *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
 
 ## Source & attribution
 
