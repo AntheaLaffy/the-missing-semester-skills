@@ -28,6 +28,6 @@ description: >
 
 ## 练习
 
-学习材料在 `exercises.md`。
+学习材料在 `exercises.md`；用 DeepSeek Harness（dsh）实操的专属练习见 `exercises-dsh.md`。
 
 > 改编自 MIT The Missing Semester 课程 Lecture 7: Agentic Coding（讲义 + 口播稿，CC BY-NC-SA 4.0）：https://creativecommons.org/licenses/by-nc-sa/4.0/ · 课程站点：https://missing.csail.mit.edu/ · 讲座视频：https://www.youtube.com/watch?v=sTdz6PZoAnw

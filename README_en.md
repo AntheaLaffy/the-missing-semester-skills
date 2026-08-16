@@ -50,6 +50,8 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 - **`agentic-coding`** — The intern mental model, LLM mechanics and privacy, seven task types (implement / fix / refactor / review / understand / shell / vibe coding), caveats; notes dsh. *Model-invoked* ("implement / fix / refactor / review / understand with an agent")
 - **`agent-context-management`** — The context toolkit (clear / rewind / compact / llms.txt / AGENTS.md / Skills), subagents, parallel agents with worktrees, MCP; this repo is itself a Skills practice. *Model-invoked* ("write an AGENTS.md / create a skill or subagent / manage context / MCP")
 
+> Both skills ship dsh (DeepSeek Harness)-specific hands-on exercises in `exercises-dsh.md` — mapping the lecture's Claude Code mechanics (Skills / subagents / compaction / confirmation prompts) onto dsh for a fast start. Official docs: <https://www.deepseek.com/harness/>
+
 ## Lecture 8 · Beyond the Code
 
 ### One-way communication

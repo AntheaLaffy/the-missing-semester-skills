@@ -50,6 +50,8 @@
 - **`agentic-coding`** — 实习生心智模型、LLM 原理与隐私、七类应用场景（实现/修复/重构/审查/理解/Shell/氛围编程）、注意事项；附 dsh 注记。*自动触发*（「用智能体实现/修复/重构/审查/理解代码」）
 - **`agent-context-management`** — 上下文六件套（清空/回退/压缩/llms.txt/AGENTS.md/Skills）、子智能体、并行智能体与 worktrees、MCP；本仓库本身就是 Skills 机制的实践。*自动触发*（「写 AGENTS.md/建 skill/子智能体/管上下文/MCP」）
 
+> 这两个 skill 均附 dsh（DeepSeek Harness）专属实操练习 `exercises-dsh.md`——把讲义里的 Claude Code 机制（Skills/子智能体/上下文压缩/确认提示）一一映射到 dsh，快速上手 dsh 用。官方文档：<https://www.deepseek.com/harness/>
+
 ## 第 8 讲 · Beyond the Code
 
 ### One-way communication（单向沟通）
