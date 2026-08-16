@@ -4,7 +4,7 @@
 
 > 好的软件工程师不只是写出能跑的代码——还要写出别人（包括未来的你）能看懂、能维护、能继续构建的代码。
 
-本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/) 与第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/)。
+本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/)、第 2 讲 [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/) 与第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/)。
 
 ## 第 1 讲 · Course overview + the shell
 
@@ -13,6 +13,14 @@
 - **`shell-scripting`** — bash 脚本语言：shebang、`set -euo pipefail`、条件循环、命令替换；配 shellcheck，超百行迁 Python。*自动触发*（「帮我写 shell 脚本」）
 
 > 第 1 讲的课程概览（讲师、课程目的与结构）是元信息，未固化为 skill。
+
+## 第 2 讲 · Command-line Environment
+
+- **`shell-conventions`** — 参数（`--` 终止选项/glob）、流与重定向、环境变量（进程替换/export）、返回码与 `&&`/`||` 的深层约定；附 AI in Shell（`llm`）。*手动点名使用*
+- **`shell-job-control`** — 信号（SIGINT/SIGTERM/SIGKILL）、`&`/jobs/fg/bg、nohup/disown、trap 清理、wait/pgrep/pkill。*自动触发*（「放后台跑/杀掉进程/写清理脚本」）
+- **`ssh-remote`** — SSH 密钥与 authorized_keys、非交互执行、scp/rsync、`~/.ssh/config` 别名与端口转发、mosh。*自动触发*（「连服务器/配 SSH 密钥/传文件」）
+- **`dotfiles`** — dotfiles 仓库与符号链接、alias/函数、PATH、包管理器、Ctrl-R 历史搜索、终端模拟器选择。*自动触发*（「整理 dotfiles/写 alias」）
+- **`tmux`** — sessions/windows/panes 层级与 `<C-b>` 快捷键速查。*手动点名使用*
 
 ## 第 8 讲 · Beyond the Code
 
@@ -40,12 +48,13 @@
 
 ## 安装
 
-把本目录复制到 Claude Code 的 skills 文件夹（或 `git clone` 本仓库到 `~/.claude/skills/`）即可：五个标注「自动触发」的 skill 由模型按需加载，三个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
+把本目录复制到 Claude Code 的 skills 文件夹（或 `git clone` 本仓库到 `~/.claude/skills/`）即可：八个标注「自动触发」的 skill 由模型按需加载，五个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
 
 ## 来源与署名
 
 改编自 *The Missing Semester of Your CS Education*（2026 版）各讲讲义与讲座口播稿。
 
 - 第 1 讲 Course overview + the shell：<https://missing.csail.mit.edu/2026/course-shell/> · 视频：<https://www.youtube.com/watch?v=MSgoeuMqUmU>
+- 第 2 讲 Command-line Environment：<https://missing.csail.mit.edu/2026/command-line-environment/> · 视频：<https://www.youtube.com/watch?v=ccBGsPedE9Q>
 - 第 8 讲 Beyond the Code：<https://missing.csail.mit.edu/2026/beyond-code/> · 视频：<https://www.youtube.com/watch?v=2DOEATfXT8k>
 - 课程内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可发布，本组 skills 遵循同一许可。

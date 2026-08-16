@@ -4,7 +4,7 @@
 
 > Being a good software engineer isn't just about writing code that works — it's about writing code that others (including future you) can understand, maintain, and build upon.
 
-This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/), and Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/).
+This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/); Lecture 2, [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/); and Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/).
 
 ## Lecture 1 · Course overview + the shell
 
@@ -13,6 +13,14 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 - **`shell-scripting`** — The bash language: shebang, `set -euo pipefail`, conditionals and loops, command substitution; pair with shellcheck, port to Python past ~100 lines. *Model-invoked* ("help me write a shell script")
 
 > The lecture's course overview (instructors, purpose, structure) is meta information and is not distilled into a skill.
+
+## Lecture 2 · Command-line Environment
+
+- **`shell-conventions`** — Deep-dive conventions for arguments (`--` terminator / globbing), streams and redirection, environment variables (process substitution / `export`), return codes and `&&`/`||`; plus AI in the shell (`llm`). *User-invoked*
+- **`shell-job-control`** — Signals (SIGINT/SIGTERM/SIGKILL), `&`/jobs/fg/bg, nohup/disown, `trap` cleanup, wait/pgrep/pkill. *Model-invoked* ("run this in the background / kill a process / write a cleanup script")
+- **`ssh-remote`** — SSH keys and authorized_keys, non-interactive commands, scp/rsync, `~/.ssh/config` aliases and port forwarding, mosh. *Model-invoked* ("connect to a server / set up SSH keys / copy files")
+- **`dotfiles`** — Dotfiles repo with symlinks, aliases/functions, PATH, package managers, Ctrl-R history search, terminal emulator choice. *Model-invoked* ("organize dotfiles / write an alias")
+- **`tmux`** — Sessions/windows/panes hierarchy and `<C-b>` keybinding cheatsheet. *User-invoked*
 
 ## Lecture 8 · Beyond the Code
 
@@ -40,12 +48,13 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 
 ## Installation
 
-Copy this directory into Claude Code's skills folder (or `git clone` this repo to `~/.claude/skills/`). The five *model-invoked* skills load automatically when relevant; the three *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
+Copy this directory into Claude Code's skills folder (or `git clone` this repo to `~/.claude/skills/`). The eight *model-invoked* skills load automatically when relevant; the five *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
 
 ## Source & attribution
 
 Adapted from the lecture notes and transcripts of *The Missing Semester of Your CS Education* (2026 edition).
 
 - Lecture 1, Course overview + the shell: <https://missing.csail.mit.edu/2026/course-shell/> · video: <https://www.youtube.com/watch?v=MSgoeuMqUmU>
+- Lecture 2, Command-line Environment: <https://missing.csail.mit.edu/2026/command-line-environment/> · video: <https://www.youtube.com/watch?v=ccBGsPedE9Q>
 - Lecture 8, Beyond the Code: <https://missing.csail.mit.edu/2026/beyond-code/> · video: <https://www.youtube.com/watch?v=2DOEATfXT8k>
 - Course materials are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); these skills follow the same license.
