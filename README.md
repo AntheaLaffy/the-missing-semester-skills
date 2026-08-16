@@ -4,7 +4,7 @@
 
 > 好的软件工程师不只是写出能跑的代码——还要写出别人（包括未来的你）能看懂、能维护、能继续构建的代码。
 
-本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/)、第 2 讲 [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/)、第 3 讲 [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/)、第 4 讲 [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/)、第 5 讲 [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/)、第 6 讲 [*Packaging and Shipping Code*](https://missing.csail.mit.edu/2026/shipping-code/) 与第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/)。
+本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/)、第 2 讲 [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/)、第 3 讲 [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/)、第 4 讲 [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/)、第 5 讲 [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/)、第 6 讲 [*Packaging and Shipping Code*](https://missing.csail.mit.edu/2026/shipping-code/)、第 7 讲 [*Agentic Coding*](https://missing.csail.mit.edu/2026/agentic-coding/) 与第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/)。
 
 ## 第 1 讲 · Course overview + the shell
 
@@ -45,6 +45,11 @@
 - **`versioning-reproducibility`** — SemVer/CalVer、版本约束、库 vs 应用的锁定策略、hermetic builds、升级与回滚。*手动点名使用*
 - **`containers-deployment`** — Dockerfile 最佳实践与镜像分层、Compose、systemd、K8s 边界、配置与 secrets、部署发布。*自动触发*（「写 Dockerfile/compose/容器化/部署服务」）
 
+## 第 7 讲 · Agentic Coding
+
+- **`agentic-coding`** — 实习生心智模型、LLM 原理与隐私、七类应用场景（实现/修复/重构/审查/理解/Shell/氛围编程）、注意事项；附 dsh 注记。*自动触发*（「用智能体实现/修复/重构/审查/理解代码」）
+- **`agent-context-management`** — 上下文六件套（清空/回退/压缩/llms.txt/AGENTS.md/Skills）、子智能体、并行智能体与 worktrees、MCP；本仓库本身就是 Skills 机制的实践。*自动触发*（「写 AGENTS.md/建 skill/子智能体/管上下文/MCP」）
+
 ## 第 8 讲 · Beyond the Code
 
 ### One-way communication（单向沟通）
@@ -71,7 +76,7 @@
 
 ## 安装
 
-把本目录复制到 Claude Code 的 skills 文件夹（或 `git clone` 本仓库到 `~/.claude/skills/`）即可：十四个标注「自动触发」的 skill 由模型按需加载，八个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
+把本目录复制到 Claude Code 的 skills 文件夹（或 `git clone` 本仓库到 `~/.claude/skills/`）即可：十六个标注「自动触发」的 skill 由模型按需加载，八个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
 
 ## 来源与署名
 
@@ -83,5 +88,6 @@
 - 第 4 讲 Debugging and Profiling：<https://missing.csail.mit.edu/2026/debugging-profiling/> · 视频：<https://www.youtube.com/watch?v=8VYT9TcUmKs>
 - 第 5 讲 Version Control and Git：<https://missing.csail.mit.edu/2026/version-control/> · 视频：<https://www.youtube.com/watch?v=9K8lB61dl3Y>
 - 第 6 讲 Packaging and Shipping Code：<https://missing.csail.mit.edu/2026/shipping-code/> · 视频：<https://www.youtube.com/watch?v=KBMiB-8P4Ns>
+- 第 7 讲 Agentic Coding：<https://missing.csail.mit.edu/2026/agentic-coding/> · 视频：<https://www.youtube.com/watch?v=sTdz6PZoAnw>
 - 第 8 讲 Beyond the Code：<https://missing.csail.mit.edu/2026/beyond-code/> · 视频：<https://www.youtube.com/watch?v=2DOEATfXT8k>
 - 课程内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可发布，本组 skills 遵循同一许可。
