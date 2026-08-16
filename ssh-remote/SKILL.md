@@ -14,7 +14,7 @@ description: >
 ## 操作契约
 
 - **非交互执行**：`ssh user@host cmd` 在远程跑单条命令并带回 stdout。引号决定在哪边跑：`ssh host ls | wc -l` 是 ls 在远程、wc 在本地；`ssh host 'ls | wc -l'` 两边都在远程。
-- **优先密钥认证**：`ssh-keygen -a 100 -t ed25519 -f ~/.ssh/id_ed25519` 生成密钥对；私钥本质上等同于密码，绝不要泄露；`ssh-keygen -y -f /path/to/key` 可检查是否设了口令。`ssh-copy-id -i .ssh/id_ed25519.pub user@host` 把公钥装进服务器的 authorized_keys。
+- **优先密钥认证**：`ssh-keygen -a 100 -t ed25519 -f ~/.ssh/id_ed25519` 生成密钥对；私钥本质上等同于密码，绝不要泄露。**务必给私钥设 passphrase**——不设的话，任何能读你文件系统的程序都能原样拿走私钥；passphrase 把密钥加密，配合 ssh-agent 免去重复输入。`ssh-keygen -y -f /path/to/key` 检查是否设了口令；`ssh-copy-id -i .ssh/id_ed25519.pub user@host` 把公钥装进服务器的 authorized_keys（它只干这一件事：拷一行公钥字符串）。
 - **传输**：`scp path/to/local_file remote_host:path/to/remote_file`（反向同理）；rsync 增量同步——跳过两端一致的文件、`--partial` 断点续传，对符号链接/权限控制更细，常备优先。
 - **~/.ssh/config 声明别名**：`Host vm` + `User`/`HostName`/`Port`/`IdentityFile`/`LocalForward`，ssh、scp、rsync、mosh 共用；支持 `Host *.mit.edu` 通配。
 - **端口转发**：`LocalForward 9999 localhost:8888` 把远程服务映射到本地端口；`-N` 不执行命令、`-f` 放后台，合起来做后台隧道。
