@@ -108,6 +108,8 @@ curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-sk
 - opencode 原生读取 `.claude/skills` 与 `.agents/skills`，装给前两者即自动覆盖
 - 卸载：`bash install.sh --uninstall`
 
+> dsh 用户想要**版本化插件安装**（随 pnpm 更新、不依赖软链接），可用 dsh 插件分叉：https://github.com/AntheaLaffy/missing-semester-skills-dsh（`dsh plugin --profile web add github:AntheaLaffy/missing-semester-skills-dsh`）
+
 老办法同样可行：把本目录复制进 skills 文件夹，或 `git clone` 本仓库到 `~/.claude/skills/`。
 
 十九个标注「自动触发」的 skill 由模型按需加载，十个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。

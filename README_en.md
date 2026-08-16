@@ -108,6 +108,8 @@ curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-sk
 - OpenCode natively reads `.claude/skills` and `.agents/skills`, so installing to either covers it
 - Uninstall: `bash install.sh --uninstall`
 
+> dsh users who prefer a **versioned plugin install** (updates via pnpm, no symlinks) can use the dsh plugin fork: https://github.com/AntheaLaffy/missing-semester-skills-dsh (`dsh plugin --profile web add github:AntheaLaffy/missing-semester-skills-dsh`)
+
 The old way also works: copy this directory into a skills folder, or `git clone` this repo to `~/.claude/skills/`.
 
 The nineteen *model-invoked* skills load automatically when relevant; the ten *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
