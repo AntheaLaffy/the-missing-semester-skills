@@ -4,7 +4,7 @@
 
 > 好的软件工程师不只是写出能跑的代码——还要写出别人（包括未来的你）能看懂、能维护、能继续构建的代码。
 
-本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/)、第 2 讲 [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/)、第 3 讲 [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/)、第 4 讲 [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/) 与第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/)。
+本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/)、第 2 讲 [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/)、第 3 讲 [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/)、第 4 讲 [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/)、第 5 讲 [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/) 与第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/)。
 
 ## 第 1 讲 · Course overview + the shell
 
@@ -34,6 +34,11 @@
 
 > 本讲这两个 skill 只做 MIT 讲义的科学面（原理与具体工具）；与工程策略（艺术面）混合的版本见 dsh 内置的 `debugging-and-profiling` 与 `diagnosing-bugs`。
 
+## 第 5 讲 · Version Control and Git
+
+- **`git-data-model`** — blob/tree/commit、提交 DAG、内容寻址、引用与 HEAD、暂存区；每条命令都是对模型的操作。*手动点名使用*
+- **`git-cli`** — 命令地图：日常/分支合并/远程/撤销/进阶/gitignore/config；提交信息与 PR 分别指向 `writing-for-readers` 与 `contributing-upstream`。*自动触发*（「帮我 git 提交/合并/解冲突/推送/撤销」）
+
 ## 第 8 讲 · Beyond the Code
 
 ### One-way communication（单向沟通）
@@ -60,7 +65,7 @@
 
 ## 安装
 
-把本目录复制到 Claude Code 的 skills 文件夹（或 `git clone` 本仓库到 `~/.claude/skills/`）即可：十一个标注「自动触发」的 skill 由模型按需加载，六个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
+把本目录复制到 Claude Code 的 skills 文件夹（或 `git clone` 本仓库到 `~/.claude/skills/`）即可：十二个标注「自动触发」的 skill 由模型按需加载，七个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
 
 ## 来源与署名
 
@@ -70,5 +75,6 @@
 - 第 2 讲 Command-line Environment：<https://missing.csail.mit.edu/2026/command-line-environment/> · 视频：<https://www.youtube.com/watch?v=ccBGsPedE9Q>
 - 第 3 讲 Development Environment：<https://missing.csail.mit.edu/2026/development-environment/> · 视频：<https://www.youtube.com/watch?v=QnM1nVzrkx8>
 - 第 4 讲 Debugging and Profiling：<https://missing.csail.mit.edu/2026/debugging-profiling/> · 视频：<https://www.youtube.com/watch?v=8VYT9TcUmKs>
+- 第 5 讲 Version Control and Git：<https://missing.csail.mit.edu/2026/version-control/> · 视频：<https://www.youtube.com/watch?v=9K8lB61dl3Y>
 - 第 8 讲 Beyond the Code：<https://missing.csail.mit.edu/2026/beyond-code/> · 视频：<https://www.youtube.com/watch?v=2DOEATfXT8k>
 - 课程内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可发布，本组 skills 遵循同一许可。
