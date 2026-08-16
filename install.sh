@@ -5,7 +5,7 @@ set -euo pipefail
 # The Missing Semester · Skills 一键安装脚本
 #
 # 用法:
-#   bash install.sh [claude|agents|opencode|all] [--yes]
+#   bash install.sh [claude|agents|opencode|codex|all] [--yes]
 #   bash install.sh --uninstall [target...]
 #
 # 行为:
@@ -14,7 +14,6 @@ set -euo pipefail
 #       已存在 -> 可选同步安装
 #       不存在 -> 可选把它建成指向主目标的软链接
 #   - opencode 原生读取 ~/.claude/skills 与 ~/.agents/skills,自动覆盖,无需单独装
-#   - Codex CLI 没有文件式 skills 目录(用 ~/.codex/AGENTS.md 或 MCP),自动跳过
 # ============================================================
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -32,6 +31,7 @@ dir_for() {
     claude)   printf '%s' '.claude/skills' ;;
     agents)   printf '%s' '.agents/skills' ;;
     opencode) printf '%s' '.config/opencode/skills' ;;
+    codex)    printf '%s' '.codex/skills' ;;
     *) return 1 ;;
   esac
 }
@@ -41,6 +41,7 @@ label_for() {
     claude)   printf '%s' 'Claude Code' ;;
     agents)   printf '%s' 'dsh / DeepSeek Harness' ;;
     opencode) printf '%s' 'OpenCode' ;;
+    codex)    printf '%s' 'Codex CLI' ;;
     *) return 1 ;;
   esac
 }
@@ -97,14 +98,14 @@ for arg in "$@"; do
   case "$arg" in
     --yes)       ASSUME_YES=1 ;;
     --uninstall) UNINSTALL=1 ;;
-    claude|agents|opencode|all) PRIMARY="$arg" ;;
+    claude|agents|opencode|codex|all) PRIMARY="$arg" ;;
     *) err "无法识别的参数: $arg"; exit 2 ;;
   esac
 done
 
 # ---- 卸载模式 ----
 if [ "$UNINSTALL" = 1 ]; then
-  targets="${PRIMARY:-claude agents opencode}"
+  targets="${PRIMARY:-claude agents opencode codex}"
   for t in $targets; do
     rel="$(dir_for "$t" 2>/dev/null || true)"
     [ -n "$rel" ] || continue
@@ -123,13 +124,15 @@ if [ -z "$PRIMARY" ]; then
     info "  1) claude   -> ~/.claude/skills            (Claude Code)"
     info "  2) agents   -> ~/.agents/skills            (dsh / DeepSeek Harness)"
     info "  3) opencode -> ~/.config/opencode/skills   (OpenCode)"
-    info "  4) all      -> 全部"
-    printf '请输入 1-4 [2]: ' >&2
+    info "  4) codex    -> ~/.codex/skills             (Codex CLI)"
+    info "  5) all      -> 全部"
+    printf '请输入 1-5 [2]: ' >&2
     read -r choice
     case "${choice:-2}" in
       1) PRIMARY=claude ;;
       3) PRIMARY=opencode ;;
-      4) PRIMARY=all ;;
+      4) PRIMARY=codex ;;
+      5) PRIMARY=all ;;
       *) PRIMARY=agents ;;
     esac
   fi
@@ -144,11 +147,11 @@ install_to() {
 }
 
 if [ "$PRIMARY" = all ]; then
-  for t in claude agents opencode; do install_to "$t"; done
+  for t in claude agents opencode codex; do install_to "$t"; done
 else
   install_to "$PRIMARY"
   info "检查其他 agent 的 skills 目录:"
-  for t in claude agents opencode; do
+  for t in claude agents opencode codex; do
     [ "$t" = "$PRIMARY" ] && continue
     rel="$(dir_for "$t")"; dir="$HOME/$rel"
     # opencode 原生读 .claude 与 .agents,主目标已覆盖它
@@ -175,8 +178,7 @@ fi
 info ""
 info "完成。卸载: bash install.sh --uninstall"
 if [ "$PRIMARY" = all ]; then
-  info "验证: ls ~/.claude/skills ~/.agents/skills ~/.config/opencode/skills"
+  info "验证: ls ~/.claude/skills ~/.agents/skills ~/.config/opencode/skills ~/.codex/skills"
 else
   info "验证: ls ~/$(dir_for "$PRIMARY")"
 fi
-info "Codex CLI 用户注意: Codex 没有文件式 skills 目录,请把需要的 SKILL.md 追加进 ~/.codex/AGENTS.md(或经 MCP 接入)。"

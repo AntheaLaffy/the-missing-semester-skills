@@ -97,9 +97,9 @@ bash install.sh            # interactively choose claude / agents / opencode / a
 curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-skills/main/install.sh | bash -s -- agents --yes
 ```
 
-- Primary target: `~/.claude/skills` (Claude Code), `~/.agents/skills` (dsh / DeepSeek Harness), or `~/.config/opencode/skills` (OpenCode)
+- Primary target: `~/.claude/skills` (Claude Code), `~/.agents/skills` (dsh / DeepSeek Harness), `~/.config/opencode/skills` (OpenCode), or `~/.codex/skills` (Codex CLI)
 - For other agents: if their skills folder exists you can optionally install there too; if it doesn't, you can optionally create it as a symlink to the primary target
-- OpenCode natively reads `.claude/skills` and `.agents/skills`, so installing to either covers it; Codex CLI has no file-based skills folder (use `~/.codex/AGENTS.md` or MCP)
+- OpenCode natively reads `.claude/skills` and `.agents/skills`, so installing to either covers it
 - Uninstall: `bash install.sh --uninstall`
 
 The old way also works: copy this directory into a skills folder, or `git clone` this repo to `~/.claude/skills/`.

@@ -97,9 +97,9 @@ bash install.sh            # 交互选择 claude / agents / opencode / all
 curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-skills/main/install.sh | bash -s -- agents --yes
 ```
 
-- 主目标可选：`~/.claude/skills`（Claude Code）、`~/.agents/skills`（dsh / DeepSeek Harness）、`~/.config/opencode/skills`（OpenCode）
+- 主目标可选：`~/.claude/skills`（Claude Code）、`~/.agents/skills`（dsh / DeepSeek Harness）、`~/.config/opencode/skills`（OpenCode）、`~/.codex/skills`（Codex CLI）
 - 其他 agent 的 skills 目录已存在 → 可选同步安装；不存在 → 可选建成指向主目标的软链接
-- opencode 原生读取 `.claude/skills` 与 `.agents/skills`，装给前两者即自动覆盖；Codex CLI 没有文件式 skills 目录（请用 `~/.codex/AGENTS.md` 或 MCP）
+- opencode 原生读取 `.claude/skills` 与 `.agents/skills`，装给前两者即自动覆盖
 - 卸载：`bash install.sh --uninstall`
 
 老办法同样可行：把本目录复制进 skills 文件夹，或 `git clone` 本仓库到 `~/.claude/skills/`。
