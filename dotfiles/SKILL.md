@@ -13,13 +13,14 @@ description: >
 
 ## 操作契约
 
-- **dotfiles 仓库**：单独目录 + git 管理 + 脚本 `ln -s` 到 `~`；换机器 clone 后跑安装脚本即可。先建仓库再逐步迁移，别追求一次搬空。参考资源：[dotfiles.github.io](https://dotfiles.github.io/)。
-- **常用配置位置**：bash `~/.bashrc`/`~/.bash_profile`、git `~/.gitconfig`、vim `~/.vimrc`、ssh `~/.ssh/config`、tmux `~/.tmux.conf`。
-- **PATH 追加**：`export PATH="$PATH:path/to/append"`——让子进程能找到新装的可执行文件。
+- **dotfiles 仓库**：单独目录 + git 管理 + 脚本 `ln -s` 到 `~`；换机器 clone 后跑安装脚本即可。先建仓库再逐步迁移，别追求一次搬空。别人的 dotfiles 是学习材料：逐行读懂再抄，别整套照搬——不理解的东西会在你最不想它出问题时爆雷。参考资源：[dotfiles.github.io](https://dotfiles.github.io/)。
+- **常用配置位置**：bash `~/.bashrc`/`~/.bash_profile`、git `~/.gitconfig`、vim `~/.vimrc`、ssh `~/.ssh/config`、tmux `~/.tmux.conf`。bash 区分两类会话：交互会话读 `~/.bashrc`、登录会话读 `~/.bash_profile`（zsh 又是另一套文件）——改完不生效多半是改错了文件。
+- **PATH 追加**：`export PATH="$PATH:path/to/append"`——让子进程能找到新装的可执行文件。Shell 默认不在当前目录找程序（所以要 `./script.sh`），PATH 不含 `.` 是安全默认；写进 `~/.bashrc` 才会在新会话里持久——export 只管子进程，不管下次登录。
+- **提示符 PS1**：`PS1` 变量决定左侧提示符长什么样——最小成本的第一项定制；powerlevel10k 这类主题插件能显示 git 分支、上一条命令的返回码等。
 - **装工具用包管理器**：macOS Homebrew、Ubuntu/Debian apt、Fedora dnf、Arch pacman；`rg`（ripgrep）替 grep、`fd` 替 find、`tldr` 给示例化 man page。不知道命令装哪个包？查 command-not-found.com。
 - **alias 规则**：等号两边不能有空格（alias 是命令，接收单个参数）；不能接收命令中间位置的参数——复杂一点就写函数；`\ls` 临时忽略别名，`unalias la` 删除，`alias ll` 查看定义。常见：`alias ll="ls -lh"`、`alias gs="git status"`、`alias mv="mv -i"`、`alias mkdir="mkdir -p"`。
 - **历史搜索**：Ctrl-R 反向搜索历史命令；配置 fzf 的 shell 集成后变成交互式模糊搜索。
-- **框架与插件宁缺毋滥**：oh-my-zsh/prezto 类大框架明显拖慢启动，只装真正会用的单点插件（zsh-syntax-highlighting、zsh-autosuggestions、zsh-completions 等）；fish 这类 shell 内置了大部分。
+- **框架与插件宁缺毋滥**：oh-my-zsh/prezto 类大框架明显拖慢启动，只装真正会用的单点插件（zsh-syntax-highlighting 给命令着色、zsh-autosuggestions 按历史补全、zsh-completions 补全定义、powerlevel10k 提示符主题）；fish 这类 shell 内置了大部分。
 - **终端模拟器也值得选**：字体、配色、快捷键、回滚缓冲、性能（Alacritty/Ghostty 支持 GPU 加速）——你会在这里面待上几百上千小时。
 
 ## 练习
