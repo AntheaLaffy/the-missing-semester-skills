@@ -4,7 +4,7 @@
 
 > 好的软件工程师不只是写出能跑的代码——还要写出别人（包括未来的你）能看懂、能维护、能继续构建的代码。
 
-本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/)、第 2 讲 [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/)、第 3 讲 [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/)、第 4 讲 [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/)、第 5 讲 [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/)、第 6 讲 [*Packaging and Shipping Code*](https://missing.csail.mit.edu/2026/shipping-code/)、第 7 讲 [*Agentic Coding*](https://missing.csail.mit.edu/2026/agentic-coding/) 与第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/)。
+本组 skills 整理自 MIT [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/)（2026 版），把「代码之外的另一半工程能力」固化为可随时调用的 Claude Code skills，按课程章节组织。目前已覆盖第 1 讲 [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/)、第 2 讲 [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/)、第 3 讲 [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/)、第 4 讲 [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/)、第 5 讲 [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/)、第 6 讲 [*Packaging and Shipping Code*](https://missing.csail.mit.edu/2026/shipping-code/)、第 7 讲 [*Agentic Coding*](https://missing.csail.mit.edu/2026/agentic-coding/)、第 8 讲 [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/) 与第 9 讲 [*Code Quality*](https://missing.csail.mit.edu/2026/code-quality/)。
 
 ## 第 1 讲 · Course overview + the shell
 
@@ -76,6 +76,13 @@
 
 - **`ai-etiquette`** — 实质性贡献要披露、遵循团队政策、评估场景先确认是否允许、学习阶段别让 AI 代劳。*手动点名使用*
 
+## 第 9 讲 · Code Quality
+
+- **`code-quality-tooling`** — 格式化器（Prettier/Black/gofmt/EditorConfig）、linter（规则/预设/自动修复）、semgrep 语义 grep。*自动触发*（「配格式化/linter/修 lint 错误」）
+- **`testing`** — 测试类型（单元/集成/功能/回归/性质测试）、mock、行覆盖率与 Codecov；TDD 纪律另见 dsh 的 `tdd` skill。*自动触发*（「写测试/提覆盖率」）
+- **`ci-cd`** — pre-commit 钩子、GitHub Actions（push/PR/定时、矩阵、只检查模式、徽章）、持续部署、just/npm scripts 命令运行器。*自动触发*（「配 pre-commit/CI/CD/just」）
+- **`regex`** — 语法速查、捕获组与引用、贪婪陷阱、局限性。*手动点名使用*
+
 ## 安装
 
 一键安装（软链接方式，仓库更新后各 agent 立即可用）：
@@ -97,7 +104,7 @@ curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-sk
 
 老办法同样可行：把本目录复制进 skills 文件夹，或 `git clone` 本仓库到 `~/.claude/skills/`。
 
-十六个标注「自动触发」的 skill 由模型按需加载，八个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
+十九个标注「自动触发」的 skill 由模型按需加载，九个「手动点名」的 skill 零上下文成本、需要时点名使用。每个 skill 目录下附有课程练习题 `exercises.md`，供复习。
 
 ## 来源与署名
 
@@ -111,4 +118,5 @@ curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-sk
 - 第 6 讲 Packaging and Shipping Code：<https://missing.csail.mit.edu/2026/shipping-code/> · 视频：<https://www.youtube.com/watch?v=KBMiB-8P4Ns>
 - 第 7 讲 Agentic Coding：<https://missing.csail.mit.edu/2026/agentic-coding/> · 视频：<https://www.youtube.com/watch?v=sTdz6PZoAnw>
 - 第 8 讲 Beyond the Code：<https://missing.csail.mit.edu/2026/beyond-code/> · 视频：<https://www.youtube.com/watch?v=2DOEATfXT8k>
+- 第 9 讲 Code Quality：<https://missing.csail.mit.edu/2026/code-quality/> · 视频：<https://www.youtube.com/watch?v=XBiLUNx84CQ>
 - 课程内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可发布，本组 skills 遵循同一许可。

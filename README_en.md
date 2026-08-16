@@ -4,7 +4,7 @@
 
 > Being a good software engineer isn't just about writing code that works — it's about writing code that others (including future you) can understand, maintain, and build upon.
 
-This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/); Lecture 2, [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/); Lecture 3, [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/); Lecture 4, [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/); Lecture 5, [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/); Lecture 6, [*Packaging and Shipping Code*](https://missing.csail.mit.edu/2026/shipping-code/); Lecture 7, [*Agentic Coding*](https://missing.csail.mit.edu/2026/agentic-coding/); and Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/).
+This skill collection distills lectures from MIT's [*The Missing Semester of Your CS Education*](https://missing.csail.mit.edu/) (2026 edition) into reusable Claude Code skills, organized by lecture. Covered so far: Lecture 1, [*Course overview + the shell*](https://missing.csail.mit.edu/2026/course-shell/); Lecture 2, [*Command-line Environment*](https://missing.csail.mit.edu/2026/command-line-environment/); Lecture 3, [*Development Environment*](https://missing.csail.mit.edu/2026/development-environment/); Lecture 4, [*Debugging and Profiling*](https://missing.csail.mit.edu/2026/debugging-profiling/); Lecture 5, [*Version Control and Git*](https://missing.csail.mit.edu/2026/version-control/); Lecture 6, [*Packaging and Shipping Code*](https://missing.csail.mit.edu/2026/shipping-code/); Lecture 7, [*Agentic Coding*](https://missing.csail.mit.edu/2026/agentic-coding/); Lecture 8, [*Beyond the Code*](https://missing.csail.mit.edu/2026/beyond-code/); and Lecture 9, [*Code Quality*](https://missing.csail.mit.edu/2026/code-quality/).
 
 ## Lecture 1 · Course overview + the shell
 
@@ -76,6 +76,13 @@ This skill collection distills lectures from MIT's [*The Missing Semester of You
 
 - **`ai-etiquette`** — Disclose substantive AI contributions, follow team policies, confirm the rules in assessment settings, don't let AI do the learning for you. *User-invoked*
 
+## Lecture 9 · Code Quality
+
+- **`code-quality-tooling`** — Formatters (Prettier/Black/gofmt/EditorConfig), linters (rules / presets / auto-fix), semgrep semantic grep. *Model-invoked* ("set up a formatter / linter / fix lint errors")
+- **`testing`** — Test types (unit / integration / functional / regression / property-based), mocking, line coverage and Codecov; TDD discipline lives in dsh's `tdd` skill. *Model-invoked* ("write tests / raise coverage")
+- **`ci-cd`** — Pre-commit hooks, GitHub Actions (push / PR / schedule, matrices, check-only mode, badges), continuous deployment, just / npm scripts command runners. *Model-invoked* ("set up pre-commit / CI/CD / just")
+- **`regex`** — Syntax cheatsheet, capture groups and references, the greediness trap, limitations. *User-invoked*
+
 ## Installation
 
 One-click install (symlinks; agents pick up repo updates automatically):
@@ -97,7 +104,7 @@ curl -fsSL https://raw.githubusercontent.com/AntheaLaffy/the-missing-semester-sk
 
 The old way also works: copy this directory into a skills folder, or `git clone` this repo to `~/.claude/skills/`.
 
-The sixteen *model-invoked* skills load automatically when relevant; the eight *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
+The nineteen *model-invoked* skills load automatically when relevant; the nine *user-invoked* skills carry zero context cost and are triggered by name. Each skill folder includes the lecture's exercises in `exercises.md` for review.
 
 ## Source & attribution
 
@@ -111,4 +118,5 @@ Adapted from the lecture notes and transcripts of *The Missing Semester of Your 
 - Lecture 6, Packaging and Shipping Code: <https://missing.csail.mit.edu/2026/shipping-code/> · video: <https://www.youtube.com/watch?v=KBMiB-8P4Ns>
 - Lecture 7, Agentic Coding: <https://missing.csail.mit.edu/2026/agentic-coding/> · video: <https://www.youtube.com/watch?v=sTdz6PZoAnw>
 - Lecture 8, Beyond the Code: <https://missing.csail.mit.edu/2026/beyond-code/> · video: <https://www.youtube.com/watch?v=2DOEATfXT8k>
+- Lecture 9, Code Quality: <https://missing.csail.mit.edu/2026/code-quality/> · video: <https://www.youtube.com/watch?v=XBiLUNx84CQ>
 - Course materials are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); these skills follow the same license.
