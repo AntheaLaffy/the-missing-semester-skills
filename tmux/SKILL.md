@@ -20,7 +20,7 @@ disable-model-invocation: true
 
 - **快捷键形式 `<C-b> x`**：先按 Ctrl+b 并松开，再按 x。
 - **回看与复制**：`<C-b> [` 进入滚动回看模式，`<space>` 开始选择，`<enter>` 复制选中内容。
-- **远程场景**：ssh 到服务器后先开 tmux 再跑长任务——断网重连后 `tmux a` 原样接回，替代 nohup/disown。
+- **远程场景**：ssh 到服务器后先开 tmux 再跑长任务——断网重连后 `tmux a` 原样接回，替代 nohup/disown。机制：断开连接时 Shell 会发 SIGHUP 杀掉会话里的进程，tmux 捕获 SIGHUP 不往下传，进程因此存活。
 
 ## 练习
 
